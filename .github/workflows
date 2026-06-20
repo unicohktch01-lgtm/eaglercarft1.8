@@ -1,2 +1,13 @@
+name: Syns with Upstream
 
-a
+on:
+  schedule:
+　　- cron: '0 0 * * *'
+  wrokflow_dispatch
+
+jobs:
+  syns:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
