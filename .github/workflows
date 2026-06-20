@@ -11,3 +11,20 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+      with:
+        fetch-depht: 0
+
+   -name: setup
+    run:
+      git config user.name "GitHub Actions"
+      git config user.email "actions@github.com"[
+  
+  -name: merge upstream
+   run:
+     git remote add upstream https://git.eaglercraft.rip/eaglercraft/eaglercraft-1.8.git
+     git fetch upstream
+     git checkout main
+     git merge upstream/main --strategy-option=theirs --allow-unrelated-histories
+
+ - name: add wrokflow
+   run:
